@@ -1,7 +1,12 @@
-import "./App.css";
+// import "./App.css";
+import GlassStore from "./bt2-react/GlassStore";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <GlassStore />
+    </>
+  );
 }
 
 export default App;
