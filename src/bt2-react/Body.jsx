@@ -11,6 +11,7 @@ export default function Body({ list }) {
       <div className="container">
         <div className="image">
           <img src="./img/model.jpg" alt="model" width="280px" />
+          {/* sử dụng toán tử và để lấy giá trị falsy value khi người dùng click vào mấu kính */}
           {selectedItem && (
             <div className="overlay">
               <img

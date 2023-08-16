@@ -15,6 +15,7 @@ export default function GlassStore() {
       }}
     >
       <Header />
+      {/* truyền prop cho component body */}
       <Body list={data} />
     </div>
   );
