@@ -1,7 +1,7 @@
-import "./App.css";
+import ShoeShop from "./ShoeShop/ShoeShop";
 
 function App() {
-  return <div className="App"></div>;
+  return <ShoeShop />;
 }
 
 export default App;
