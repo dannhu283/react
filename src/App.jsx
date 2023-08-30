@@ -1,7 +1,7 @@
-import "./App.css";
+import Movie from "./bt-DatVe/Movie";
 
 function App() {
-  return <div className="App"></div>;
+  return <Movie />;
 }
 
 export default App;
