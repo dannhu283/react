@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { selectSeat } from "../redux/actions/movieActions";
 
 export default function Item({ seat, isSelected }) {
   const dispatch = useDispatch();
@@ -14,10 +15,7 @@ export default function Item({ seat, isSelected }) {
   }
 
   const handleSelect = () => {
-    dispatch({
-      type: "selectSeat",
-      payload: { ...seat, isSelected: !isSelected },
-    });
+    dispatch(selectSeat({ ...seat, isSelected: !isSelected }));
   };
 
   return (

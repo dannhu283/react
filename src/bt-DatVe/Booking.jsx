@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { removeSeat } from "../redux/actions/movieActions";
+import { reset } from "../redux/actions/movieActions";
 
 export default function Booking() {
   const { selectedSeats, totalPrice } = useSelector((state) => {
@@ -9,11 +11,11 @@ export default function Booking() {
   const dispatch = useDispatch();
 
   const handleRemove = (seatId) => {
-    dispatch({ type: "removeSeat", payload: seatId });
+    dispatch(removeSeat(seatId));
   };
 
   const handleBooking = () => {
-    dispatch({ type: "reset" });
+    dispatch(reset());
 
     alert("Chúc mừng bạn đã đặt mua vé thành công");
   };

@@ -1,8 +1,10 @@
+import { SELECT_SEAT, REMOVE_SEAT, RESET } from "../constants/movieConstants";
+
 const initState = { selectedSeats: [], totalPrice: 0 };
 
 const movieReducer = (state = initState, action) => {
   switch (action.type) {
-    case "selectSeat": {
+    case SELECT_SEAT: {
       const { isSelected, ...seat } = action.payload;
 
       if (isSelected) {
@@ -19,7 +21,7 @@ const movieReducer = (state = initState, action) => {
       const totalPrice = state.totalPrice - seat.gia;
       return { ...state, selectedSeats, totalPrice };
     }
-    case "removeSeat": {
+    case REMOVE_SEAT: {
       const selectedSeats = state.selectedSeats.filter(
         (item) => item.soGhe !== action.payload
       );
@@ -32,7 +34,7 @@ const movieReducer = (state = initState, action) => {
       return { ...state, selectedSeats, totalPrice };
     }
     //e làm thêm tính năng reset
-    case "reset": {
+    case RESET: {
       return initState;
     }
 
