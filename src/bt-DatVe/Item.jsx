@@ -1,5 +1,28 @@
-import React from "react";
+import { useDispatch } from "react-redux";
 
-export default function Item() {
-  return;
+export default function Item({ seat, isSelected }) {
+  const dispatch = useDispatch();
+
+  let classes = "btn text-center rounded-2 w-100 m-1";
+
+  if (seat.daDat) {
+    classes += " btn-danger";
+  } else if (isSelected) {
+    classes += " btn-success";
+  } else {
+    classes += " btn-info";
+  }
+
+  const handleSelect = () => {
+    dispatch({
+      type: "selectSeat",
+      payload: { ...seat, isSelected: !isSelected },
+    });
+  };
+
+  return (
+    <button onClick={handleSelect} className={classes} disabled={seat.daDat}>
+      {seat.soGhe}
+    </button>
+  );
 }
