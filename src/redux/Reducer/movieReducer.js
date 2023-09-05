@@ -33,7 +33,7 @@ const movieReducer = (state = initState, action) => {
 
       return { ...state, selectedSeats, totalPrice };
     }
-    //e làm thêm tính năng reset
+    //e làm thêm nhưng không đổi màu ghế sau khi đặt xong vì sợ full ghế đặt
     case RESET: {
       return initState;
     }
